@@ -1,13 +1,14 @@
 <form>
   <div>
     <label for="login">Login:</label>
-    <input type="text" id="login" name="login" placeholder="Wprowadź login" required>
+    <input type="text" id="login" name="login" placeholder="Enter login" required>
   </div>
   <div>
-    <label for="password">Hasło:</label>
-    <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter password" required>
   </div>
   <div>
-    <button type="submit">Zaloguj</button>
+    <button type="submit">Log in!</button>
+    <button (click)="goToHomePage()">Back to homepage</button>
   </div>
 </form>
