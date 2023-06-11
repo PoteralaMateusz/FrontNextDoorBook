@@ -13,7 +13,11 @@ export class AppComponent {
   constructor(private router: Router) {
   }
 
-  openComponent() {
+  goToLogin() {
     this.router.navigate(['./login']);
+  }
+
+  goToBookList() {
+    this.router.navigate(['./book-info']);
   }
 }

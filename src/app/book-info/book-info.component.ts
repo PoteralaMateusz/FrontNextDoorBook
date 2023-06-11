@@ -9,11 +9,11 @@ import {Router} from "@angular/router";
   templateUrl: './book-info.component.html',
   styleUrls: ['./book-info.component.css']
 })
-export class BookInfoComponent implements OnInit{
+export class BookInfoComponent implements OnInit {
 
   public books: Book[] = [];
 
-  constructor(private bookService: BookService,private router: Router) {
+  constructor(private bookService: BookService, private router: Router) {
   }
 
   ngOnInit() {
@@ -30,11 +30,4 @@ export class BookInfoComponent implements OnInit{
       console.error(error.message);
     }
   }
-
-  goToHome() {
-    this.router.navigate(['']);
-  }
-}
-
-export class bookInfo {
 }
