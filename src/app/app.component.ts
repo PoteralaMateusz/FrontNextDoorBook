@@ -1,7 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Book} from "./Book/Book";
-import {BookService} from "./Book/book.service";
-import {HttpErrorResponse} from "@angular/common/http";
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -9,26 +7,13 @@ import {HttpErrorResponse} from "@angular/common/http";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'FrontNextDoorBook';
 
-  public books: Book[] = [];
-
-  constructor(private bookService: BookService) {
+  constructor(private router: Router) {
   }
 
-  ngOnInit() {
-    this.getBook();
-  }
-
-  private getBook() {
-    this.bookService.getBooks().subscribe(
-      (response: Book[]) => {
-        console.log(response);
-        this.books = response;
-      }
-    ), (error: HttpErrorResponse) => {
-      console.error(error.message);
-    }
+  openComponent() {
+    this.router.navigate(['./login']);
   }
 }
