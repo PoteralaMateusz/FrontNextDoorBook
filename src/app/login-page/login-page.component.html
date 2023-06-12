@@ -1,15 +1,22 @@
-<div class="login">
-<form>
-  <div>
-    <label for="login">Login:</label>
-    <input type="text" id="login" name="login" placeholder="Enter login" required>
+<div class="center">
+  <h1>Login</h1>
+<form method="post">
+
+  <div class="txt_field">
+    <input type="text" required>
+    <span></span>
+    <label>Username</label>
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+  <div class="txt_field">
+    <input type="password" required>
+    <span></span>
+    <label>Password</label>
   </div>
-  <div>
-    <button type="submit">Log in!</button>
+  <input class="login" type="submit" value="Login">
+  <div class="signup_link">
+    Not a member ? <a href="#">Signup</a>
   </div>
+
 </form>
 </div>
