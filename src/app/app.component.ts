@@ -20,4 +20,8 @@ export class AppComponent {
   goToBookList() {
     this.router.navigate(['./book-info']);
   }
+
+  goToHomePage(){
+    this.router.navigate(['./'])
+  }
 }
