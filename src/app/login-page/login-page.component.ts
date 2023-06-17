@@ -18,12 +18,13 @@ export class LoginPageComponent implements OnInit{
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthServiceService, private storageService: TokenStorageService) { }
+  constructor(private authService: AuthServiceService, private storageService: TokenStorageService, private router:Router) { }
 
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
+      this.router.navigate(['./'])
     }
   }
 
@@ -38,6 +39,7 @@ export class LoginPageComponent implements OnInit{
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;
         this.reloadPage();
+
       },
       error: err => {
         this.errorMessage = err.error.message;
