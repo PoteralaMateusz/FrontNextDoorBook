@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {TokenStorageService} from "./login-page/Login/token-storage.service";
-import {AuthServiceService} from "./login-page/Login/auth-service.service";
-import {EvenBusService} from "./login-page/Login/even-bus.service";
+import {TokenStorageService} from "./Authorization/token-storage.service";
+import {AuthServiceService} from "./Authorization/auth-service.service";
+import {EvenBusService} from "./Authorization/even-bus.service";
 import {Subscription} from "rxjs";
 
 

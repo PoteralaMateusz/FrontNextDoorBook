@@ -11,7 +11,7 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule} from "@angular/forms";
 import { RegisterPageComponent } from './register-page/register-page.component';
-import {authInterceptorProviders} from "./login-page/Login/auth.interceptor";
+import {authInterceptorProviders} from "./Authorization/auth.interceptor";
 
 
 const routes: Routes = [
