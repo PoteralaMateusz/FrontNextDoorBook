@@ -11,6 +11,7 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule} from "@angular/forms";
 import { RegisterPageComponent } from './register-page/register-page.component';
+import {authInterceptorProviders} from "./login-page/Login/auth.interceptor";
 
 
 const routes: Routes = [
@@ -36,7 +37,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         FormsModule
     ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {

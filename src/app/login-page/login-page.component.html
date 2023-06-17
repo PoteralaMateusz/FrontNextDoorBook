@@ -1,22 +1,39 @@
 <div class="center">
   <h1>Log in</h1>
-<form method="post" (ngSubmit)="onSubmit($event)">
+  <form
+    *ngIf="!isLoggedIn"
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate>
 
-  <div class="txt_field">
-    <input name="username" type="text" required>
-    <span></span>
-    <label>Username</label>
-  </div>
+    <div class="txt_field">
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="form.username"
+        required
+        #username="ngModel"
+      >
+      <span></span>
+      <label>Username</label>
+    </div>
 
-  <div class="txt_field">
-    <input name="password" type="password" required>
-    <span></span>
-    <label>Password</label>
-  </div>
-  <input class="login" type="submit" value="Log in" >
-  <div class="signup_link">
-    Not a member ? <a href="signup">Signup</a>
-  </div>
+    <div class="txt_field">
+      <input name="password"
+             type="password"
+             [(ngModel)]="form.password"
+             required
+             minlength="6"
+             #password="ngModel"
+      >
+      <span></span>
+      <label>Password</label>
+    </div>
+    <input class="login" type="submit" value="Log in">
+    <div class="signup_link">
+      Not a member ? <a href="signup">Signup</a>
+    </div>
 
-</form>
+  </form>
 </div>

@@ -1,28 +1,52 @@
-import {Component} from '@angular/core';
-import {SignIn} from "./Login/SignIn";
-import {LoginService} from "./Login/login.service";
-import {Observable} from "rxjs";
-import {LoginUser} from "./Login/LoginUser";
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {AuthServiceService} from "./Login/auth-service.service";
+import {TokenStorageService} from "./Login/token-storage.service";
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent {
-  userToLoginData = {} as SignIn;
-  public loginUser = {} as LoginUser;
+export class LoginPageComponent implements OnInit{
+  form: any = {
+    username: null,
+    password: null
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
-  constructor(private loginService:LoginService) {
+  constructor(private authService: AuthServiceService, private storageService: TokenStorageService) { }
+
+  ngOnInit(): void {
+    if (this.storageService.isLoggedIn()) {
+      this.isLoggedIn = true;
+      this.roles = this.storageService.getUser().roles;
+    }
   }
-  onSubmit(event: any) {
-    this.userToLoginData.username = event.target.username.value;
-    this.userToLoginData.password = event.target.password.value;
 
-    const loginUser = this.loginService.signIn(this.userToLoginData);
-    loginUser.subscribe(response => {
-      this.loginUser = response;
-      console.log(this.loginUser.email);
+  onSubmit(): void {
+    const { username, password } = this.form;
+
+    this.authService.login(username, password).subscribe({
+      next: data => {
+        this.storageService.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.storageService.getUser().roles;
+        this.reloadPage();
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
     });
+  }
+
+  reloadPage(): void {
+    window.location.reload();
   }
 }
