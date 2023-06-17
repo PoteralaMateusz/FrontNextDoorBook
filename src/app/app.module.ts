@@ -9,7 +9,9 @@ import {AppComponent} from './app.component';
 import {BookInfoComponent} from './book-info/book-info.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
+import {FormsModule} from "@angular/forms";
 import { RegisterPageComponent } from './register-page/register-page.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -27,12 +29,13 @@ const routes: Routes = [
     HomeComponent,
     RegisterPageComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        CommonModule,
+        RouterModule.forRoot(routes),
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
