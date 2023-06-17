@@ -9,6 +9,7 @@ import {AppComponent} from './app.component';
 import {BookInfoComponent} from './book-info/book-info.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,12 +25,13 @@ const routes: Routes = [
     LoginPageComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        CommonModule,
+        RouterModule.forRoot(routes),
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
