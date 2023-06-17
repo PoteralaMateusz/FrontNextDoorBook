@@ -9,11 +9,13 @@ import {AppComponent} from './app.component';
 import {BookInfoComponent} from './book-info/book-info.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'book-info', component: BookInfoComponent},
-  {path: 'login', component: LoginPageComponent}
+  {path: 'login', component: LoginPageComponent},
+  {path:'signup',component:RegisterPageComponent}
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const routes: Routes = [
     HomeComponent,
     BookInfoComponent,
     LoginPageComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,

@@ -24,4 +24,8 @@ export class AppComponent {
   goToHomePage(){
     this.router.navigate(['./'])
   }
+
+  goToSignUp() {
+    this.router.navigate(['./signup'])
+  }
 }
