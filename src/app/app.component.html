@@ -3,8 +3,10 @@
   <nav>
     <ul class="nav_links">
       <li><button (click)="goToBookList()">Search books</button> </li>
+      <span *ngIf="isLoggedIn">
       <li><button>Your books</button> </li>
       <li><button>Exchanges</button> </li>
+      </span>
       <span *ngIf="!isLoggedIn">
       <li><button class="login" (click)="goToLogin()">Log in!</button> </li>
       <li><button class="signup" (click)="goToSignUp()">SignUp!</button> </li>
