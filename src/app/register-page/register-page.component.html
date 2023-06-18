@@ -1,51 +1,109 @@
 <div class="center">
   <h1>Register</h1>
-  <form method="post">
+  <form
+    *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)=" onSubmit()"
+    novalidate
+  >
     <div class="txt_field">
-      <input type="text" required>
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        [(ngModel)]="form.username"
+        required
+        #username="ngModel"
+      />
       <span></span>
       <label>Username</label>
       <small class="small_text">Username must be unique</small>
     </div>
     <div class="txt_field">
-      <input type="password" required>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        [(ngModel)]="form.password"
+        required
+        #password="ngModel"
+      />
       <span></span>
       <label>Password</label>
       <small class="small_text">Password must be 6-12 characters</small>
     </div>
     <div class="txt_field">
-      <input type="e-mail" required>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="form.email"
+        required
+        email
+        #email="ngModel"
+      />
       <span></span>
       <label>E-mail</label>
       <small class="small_text">E-mail example : xxxx@domena.com</small>
     </div>
     <div class="txt_field">
-      <input type="City" required>
+      <input
+        type="text"
+        class="form-control"
+        name="city"
+        [(ngModel)]="form.city"
+        required
+        #city="ngModel"
+      />
       <span></span>
       <label>City</label>
     </div>
     <div class="txt_field">
-      <input type="Street" required>
+      <input type="text"
+             class="form-control"
+             name="city"
+             [(ngModel)]="form.street"
+             required
+             #street="ngModel"
+      />
       <span></span>
       <label>Street</label>
     </div>
     <div class="txt_field">
-      <input type="House number" required>
+      <input type="number"
+             class="form-control"
+             name="numberHouse"
+             [(ngModel)]="form.numberHouse"
+             required
+             #numberHouse="ngModel"
+      />
       <span></span>
       <label>House number</label>
     </div>
     <div class="txt_field">
-      <input type="Zip Code" required>
+      <input type="number"
+             class="form-control"
+             name="zipCode"
+             [(ngModel)]="form.zipCode"
+             required
+             #zipCode="ngModel"
+      />
       <span></span>
       <label>Zip Code</label>
       <small class="small_text">The correct format is 00-000</small>
     </div>
     <div class="txt_field">
-      <input type="District" required>
+      <input type="text"
+             class="form-control"
+             name="district"
+             [(ngModel)]="form.district"
+             required
+             #district="ngModel"
+      />
       <span></span>
       <label>District</label>
     </div>
-    <input class="register" type="submit" value="SignUp!">
+    <input class="register" type="submit" value="SignUp!" (click)="onSubmit()">
     <div class="login_link">
       If you have already account just <a href="login">Log In</a>
     </div>
