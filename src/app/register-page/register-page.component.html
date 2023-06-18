@@ -1,5 +1,6 @@
 <div class="center">
   <h1>Register</h1>
+  <h4 *ngIf="isSuccessful">Your registration is successful!</h4>
   <form
     *ngIf="!isSuccessful"
     name="form"

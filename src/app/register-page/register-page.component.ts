@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthServiceService} from "../Authorization/auth-service.service";
 import {Address} from "../Authorization/address";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -24,7 +25,7 @@ export class RegisterPageComponent implements OnInit {
   errorMessage = '';
   address: Address = {} as Address;
 
-  constructor(private authService: AuthServiceService) {
+  constructor(private authService: AuthServiceService, private router:Router) {
   }
 
   ngOnInit(): void {
