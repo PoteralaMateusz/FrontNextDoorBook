@@ -12,13 +12,15 @@ import { HomeComponent } from './home/home.component';
 import {FormsModule} from "@angular/forms";
 import { RegisterPageComponent } from './register-page/register-page.component';
 import {authInterceptorProviders} from "./Authorization/auth.interceptor";
+import { BookAddComponent } from './book-add/book-add.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'book-info', component: BookInfoComponent},
   {path: 'login', component: LoginPageComponent},
-  {path:'signup',component:RegisterPageComponent}
+  {path:'signup',component:RegisterPageComponent},
+  {path:'bookAdd',component:BookAddComponent}
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const routes: Routes = [
     BookInfoComponent,
     LoginPageComponent,
     HomeComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    BookAddComponent
   ],
     imports: [
         BrowserModule,

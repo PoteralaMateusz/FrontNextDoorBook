@@ -5,6 +5,7 @@
       <li><button (click)="goToBookList()">Search books</button> </li>
       <span *ngIf="isLoggedIn">
       <li><button>Your books</button> </li>
+      <li><button (click)="goToAddBook()" >Add book</button> </li>
       <li><button>Exchanges</button> </li>
       </span>
       <span *ngIf="!isLoggedIn">

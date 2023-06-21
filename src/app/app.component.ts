@@ -74,4 +74,8 @@ export class AppComponent implements OnInit{
   goToSignUp() {
     this.router.navigate(['./signup'])
   }
+
+  goToAddBook() {
+    this.router.navigate(['./bookAdd'])
+  }
 }
