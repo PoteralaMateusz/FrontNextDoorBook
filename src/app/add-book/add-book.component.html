@@ -1,0 +1,40 @@
+<h2 class="form-heading">Dodaj książkę</h2>
+
+<form class="book-form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Tytuł:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="book.title" required>
+  </div>
+
+  <div class="form-group">
+    <label for="isbn">ISBN:</label>
+    <input type="number" id="isbn" name="isbn" [(ngModel)]="book.isbn" required>
+  </div>
+
+  <div class="form-group">
+    <label for="numPages">Liczba stron:</label>
+    <input type="number" id="numPages" name="numPages" [(ngModel)]="book.numPages" required>
+  </div>
+
+  <div class="form-group">
+    <label for="language">Język:</label>
+    <input type="text" id="language" name="language" [(ngModel)]="book.language" required>
+  </div>
+
+  <div class="form-group">
+    <label for="publisher">Wydawca:</label>
+    <input type="text" id="publisher" name="publisher" [(ngModel)]="book.publisher" required>
+  </div>
+
+  <div class="form-group">
+    <label for="publishedYear">Rok wydania:</label>
+    <input type="date" id="publishedYear" name="publishedYear" [(ngModel)]="book.publishedYear" required>
+  </div>
+
+  <div class="form-group">
+    <label for="bookGenre">Gatunek:</label>
+    <input type="text" id="bookGenre" name="bookGenre" [(ngModel)]="book.bookGenre" required>
+  </div>
+
+  <button type="submit" class="submit-btn">Dodaj książkę</button>
+</form>
