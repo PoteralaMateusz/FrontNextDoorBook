@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 
 
 import {AppComponent} from './app.component';
-import {BookInfoComponent} from './book-info/book-info.component';
+import {UserBooks} from './user-books/user-books';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {HomeComponent} from './home/home.component';
 import {FormsModule} from "@angular/forms";
@@ -22,7 +22,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    BookInfoComponent,
+    UserBooks,
     LoginPageComponent,
     HomeComponent,
     RegisterPageComponent,

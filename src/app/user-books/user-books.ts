@@ -6,10 +6,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-book-info',
-  templateUrl: './book-info.component.html',
-  styleUrls: ['./book-info.component.css']
+  templateUrl: './user-books.html',
+  styleUrls: ['./user-books.css']
 })
-export class BookInfoComponent implements OnInit {
+export class UserBooks implements OnInit {
 
   public books: Book[] = [];
 
