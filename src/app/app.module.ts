@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule, RouterOutlet, Routes} from '@angular/router';
 
 
 import {AppComponent} from './app.component';
@@ -11,15 +11,14 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule} from "@angular/forms";
 import { RegisterPageComponent } from './register-page/register-page.component';
-import {authInterceptorProviders} from "./Authorization/auth.interceptor";
+
+import {AddBookComponent} from "./add-book/add-book.component";
+import {ProfileComponent} from "./profile/profile.component";
+import {authInterceptorProviders} from "./_helpers/auth.interceptor";
+import {AppRoutingModule} from "./app-routing.module";
 
 
-const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'book-info', component: BookInfoComponent},
-  {path: 'login', component: LoginPageComponent},
-  {path:'signup',component:RegisterPageComponent}
-];
+
 
 @NgModule({
   declarations: [
@@ -28,15 +27,18 @@ const routes: Routes = [
     BookInfoComponent,
     LoginPageComponent,
     HomeComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    AddBookComponent,
+    ProfileComponent,
+
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        CommonModule,
-        RouterModule.forRoot(routes),
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
+    AppRoutingModule
+  ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })

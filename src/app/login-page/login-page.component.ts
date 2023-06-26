@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthServiceService} from "../Authorization/auth-service.service";
-import {TokenStorageService} from "../Authorization/token-storage.service";
+import {AuthServiceService} from "../_services/auth-service.service";
+import {TokenStorageService} from "../_services/token-storage.service";
 
 @Component({
   selector: 'app-login-page',
@@ -24,7 +24,7 @@ export class LoginPageComponent implements OnInit{
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
-      this.router.navigate(['./'])
+     // this.router.navigate(['./'])
     }
   }
 

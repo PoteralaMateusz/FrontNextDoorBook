@@ -7,10 +7,10 @@ import {
   HttpRequest
 } from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import {TokenStorageService} from "./token-storage.service";
 import {catchError, Observable, throwError} from "rxjs";
-import {EventData} from "./EventData";
-import {EvenBusService} from "./even-bus.service";
+import {EventData} from "../_shared/EventData";
+import {TokenStorageService} from "../_services/token-storage.service";
+import {EvenBusService} from "../_shared/even-bus.service";
 
 const TOKEN_HEADER_KEY = "Authorization";
 @Injectable()

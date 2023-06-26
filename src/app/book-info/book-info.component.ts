@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Book} from "../Book/Book";
-import {BookService} from "../Book/book.service";
+import {Book} from "../_entities/Book";
+import {BookService} from "../_services/book.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
 
@@ -13,7 +13,7 @@ export class BookInfoComponent implements OnInit {
 
   public books: Book[] = [];
 
-  constructor(private bookService: BookService, private router: Router) {
+  constructor(private bookService: BookService) {
   }
 
   ngOnInit() {

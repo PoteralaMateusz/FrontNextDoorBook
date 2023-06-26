@@ -1,29 +1,34 @@
 <h2 class="form-heading">Dodaj książkę</h2>
-
 <form class="book-form" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="title">Tytuł:</label>
+
+  <div class="txt_field">
     <input type="text" id="title" name="title" [(ngModel)]="book.title" required>
+    <span></span>
+    <label>Tytuł:</label>
   </div>
 
-  <div class="form-group">
-    <label for="isbn">ISBN:</label>
-    <input type="number" id="isbn" name="isbn" [(ngModel)]="book.isbn" required>
+  <div class="txt_field">
+    <input type="text" id="isbn" name="isbn" [(ngModel)]="book.isbn" required>
+    <span></span>
+    <label>ISBN:</label>
   </div>
 
-  <div class="form-group">
-    <label for="numPages">Liczba stron:</label>
-    <input type="number" id="numPages" name="numPages" [(ngModel)]="book.numPages" required>
+  <div class="txt_field">
+    <input type="text" id="numPages" name="numPages" [(ngModel)]="book.numPages" required>
+    <span></span>
+    <label>Liczba stron:</label>
   </div>
 
-  <div class="form-group">
-    <label for="language">Język:</label>
+  <div class="txt_field">
     <input type="text" id="language" name="language" [(ngModel)]="book.language" required>
+    <span></span>
+    <label>Język:</label>
   </div>
 
-  <div class="form-group">
-    <label for="publisher">Wydawca:</label>
+  <div class="txt_field">
     <input type="text" id="publisher" name="publisher" [(ngModel)]="book.publisher" required>
+    <span></span>
+    <label>Wydawca:</label>
   </div>
 
   <div class="form-group">
@@ -33,8 +38,20 @@
 
   <div class="form-group">
     <label for="bookGenre">Gatunek:</label>
-    <input type="text" id="bookGenre" name="bookGenre" [(ngModel)]="book.bookGenre" required>
+    <select id="bookGenre" name="bookGenre" [(ngModel)]="book.bookGenre" required>
+      <option value="BIOGRAPHY">Biografia</option>
+      <option value="FICTION">Fikcja</option>
+      <option value="NONFICTION">Literatura faktu</option>
+      <option value="POETRY">Poezja</option>
+      <option value="FANTASY">Fantastyka</option>
+      <option value="SCIENCEFICTION">Naukowa fantastyka</option>
+      <option value="CRIME">Kryminał</option>
+      <option value="HORROR">Horror</option>
+      <option value="ROMANCE">Romans</option>
+      <option value="SPORTS">Sport</option>
+    </select>
   </div>
 
   <button type="submit" class="submit-btn">Dodaj książkę</button>
+
 </form>

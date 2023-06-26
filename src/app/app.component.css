@@ -31,6 +31,7 @@ header {
   list-style: none;
 }
 
+
 .nav_links li {
   display: inline-block;
   padding: 0px 20px;
@@ -64,10 +65,3 @@ button:hover {
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
-
-
-
-
-
-
-

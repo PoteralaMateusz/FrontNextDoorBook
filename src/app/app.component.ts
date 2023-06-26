@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {TokenStorageService} from "./Authorization/token-storage.service";
-import {AuthServiceService} from "./Authorization/auth-service.service";
-import {EvenBusService} from "./Authorization/even-bus.service";
+import {TokenStorageService} from "./_services/token-storage.service";
+import {EvenBusService} from "./_shared/even-bus.service";
 import {Subscription} from "rxjs";
+import {AuthServiceService} from "./_services/auth-service.service";
 
 
 @Component({
@@ -59,19 +59,4 @@ export class AppComponent implements OnInit{
     });
   }
 
-  goToLogin() {
-    this.router.navigate(['./login']);
-  }
-
-  goToBookList() {
-    this.router.navigate(['./book-info']);
-  }
-
-  goToHomePage(){
-    this.router.navigate(['./'])
-  }
-
-  goToSignUp() {
-    this.router.navigate(['./signup'])
-  }
 }

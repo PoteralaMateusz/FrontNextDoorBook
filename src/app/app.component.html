@@ -1,25 +1,39 @@
+<div>
 <header xmlns="http://www.w3.org/1999/html">
-  <p><button (click)="goToHomePage()">Next Door Book </button>  </p>
+  <a href="#" routerLink="home">Next Door Book  </a>
   <nav>
     <ul class="nav_links">
-      <li><button (click)="goToBookList()">Search books</button> </li>
-      <span *ngIf="isLoggedIn">
-      <li><button>Your books</button> </li>
-      <li><button>Exchanges</button> </li>
-      </span>
+
+      <li class="nav-item">
+        <a href="/add-book" class="nav-link" *ngIf="isLoggedIn" routerLink="add-book">Add book</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a href="/books" class="nav-link" *ngIf="isLoggedIn" routerLink="books">Find books</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+
       <span *ngIf="!isLoggedIn">
-      <li><button class="login" (click)="goToLogin()">Log in!</button> </li>
-      <li><button class="signup" (click)="goToSignUp()">SignUp!</button> </li>
+      <li><button class="login" routerLink="login">Log in!</button> </li>
+      <li><button class="signup" routerLink="register">SignUp!</button> </li>
       </span>
 
       <span *ngIf="isLoggedIn">
         <li><button class="login" (click)="logout()">Logout!</button> </li>
       </span>
     </ul>
+
+
   </nav>
+
 </header>
 
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
-
-
+</div>
