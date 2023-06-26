@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="gallery">
+  <div class="content" *ngFor="let book of books">
+    <h3>„{{ book.tittle }}”</h3>
+    <p>Genre: {{ book.bookGenre }}</p>
+    <h6>Authors:</h6>
+    <p *ngFor="let author of book.authors">
+      {{ author.firstName }} {{ author.lastName }}</p>
+    <ul>
+      <li><span class="fa fa-star checked"></span> </li>
+      <li><i class="fa fa-star checked"></i> </li>
+      <li><i class="fa fa-star checked"></i> </li>
+      <li><i class="fa fa-star"></i> </li>
+      <li><i class="fa fa-star"></i> </li>
+    </ul>
+    <button class="exchange">Exchange Now</button>
+  </div>
+</div>

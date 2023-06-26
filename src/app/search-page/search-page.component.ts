@@ -2,14 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {Book} from "../_entities/Book";
 import {BookService} from "../_services/book.service";
 import {HttpErrorResponse} from "@angular/common/http";
-import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-book-info',
-  templateUrl: './book-info.component.html',
-  styleUrls: ['./book-info.component.css']
+  selector: 'app-search-page',
+  templateUrl: './search-page.component.html',
+  styleUrls: ['./search-page.component.css']
 })
-export class BookInfoComponent implements OnInit {
+export class SearchPageComponent implements OnInit{
 
   public books: Book[] = [];
 
@@ -21,7 +20,7 @@ export class BookInfoComponent implements OnInit {
   }
 
   private getUserBook() {
-    this.bookService.getUserBooks().subscribe(
+    this.bookService.getBooks().subscribe(
       (response: Book[]) => {
         console.log(response);
         this.books = response;

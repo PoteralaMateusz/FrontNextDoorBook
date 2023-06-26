@@ -15,6 +15,7 @@ import {AddBookComponent} from "./add-book/add-book.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {authInterceptorProviders} from "./_helpers/auth.interceptor";
 import {AppRoutingModule} from "./app-routing.module";
+import { SearchPageComponent } from './search-page/search-page.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {AppRoutingModule} from "./app-routing.module";
     RegisterPageComponent,
     AddBookComponent,
     ProfileComponent,
+    SearchPageComponent,
 
   ],
   imports: [

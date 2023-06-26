@@ -13,8 +13,14 @@ export class BookService {
   constructor(private http: HttpClient) {
   }
 
+  public getUserBooks(): Observable<Book[]> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.get<Book[]>(`${this.apiServerUrl}/api/books/user`,{headers});
+  }
+
   public getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.apiServerUrl}/api/books/FANTASY`);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.get<Book[]>(`${this.apiServerUrl}/api/books/FANTASY`,{headers});
   }
 
   public addBook(book: BookAddDTO): Observable<any> {

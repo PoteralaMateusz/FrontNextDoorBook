@@ -1,20 +1,18 @@
-
 <header xmlns="http://www.w3.org/1999/html">
-  <a href="#" routerLink="home">Next Door Book  </a>
+  <a href="#" routerLink="home">Next Door Book </a>
   <nav>
     <ul class="nav_links">
+
+      <li class="nav-item">
+        <a href="/add-book" class="nav-link" *ngIf="isLoggedIn" routerLink="search">Search book</a>
+      </li>
 
       <li class="nav-item">
         <a href="/add-book" class="nav-link" *ngIf="isLoggedIn" routerLink="add-book">Add book</a>
       </li>
 
-
       <li class="nav-item">
-        <a href="/books" class="nav-link" *ngIf="isLoggedIn" routerLink="books">Find books</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        <a href="/books" class="nav-link" *ngIf="isLoggedIn" routerLink="books">Your books</a>
       </li>
 
       <span *ngIf="!isLoggedIn">
@@ -23,12 +21,14 @@
       </span>
 
       <span *ngIf="isLoggedIn">
+        <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
         <li><button class="login" (click)="logout()">Logout!</button> </li>
       </span>
     </ul>
   </nav>
 </header>
-
 
 
 <div class="container">
