@@ -1,3 +1,4 @@
+<div class="center">
 <div class="container" *ngIf="currentUser; else loggedOut">
   <header class="jumbotron">
     <h3>
@@ -15,7 +16,7 @@
     </li>
   </ul>
 </div>
-
+</div>
 <ng-template #loggedOut>
   Please login.
 </ng-template>

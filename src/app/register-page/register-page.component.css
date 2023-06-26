@@ -2,10 +2,10 @@
 
 .center {
   font-family: montserrat, sans-serif;
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -25%);
   padding: 20px 20px 10px 10px;
   width: 400px;
   background: white;

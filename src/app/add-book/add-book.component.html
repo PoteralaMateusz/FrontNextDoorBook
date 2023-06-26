@@ -1,5 +1,7 @@
-<h2 class="form-heading">Dodaj książkę</h2>
-<form class="book-form" (ngSubmit)="onSubmit()">
+<div class="center">
+<h1 class="form-heading">Dodaj książkę</h1>
+<h4 *ngIf="isSuccessful">Book Successfully Added!</h4>
+<form class="book-form" *ngIf="!isSuccessful" (ngSubmit)="onSubmit()">
 
   <div class="txt_field">
     <input type="text" id="title" name="title" [(ngModel)]="book.title" required>
@@ -55,3 +57,4 @@
   <button type="submit" class="submit-btn">Dodaj książkę</button>
 
 </form>
+</div>
