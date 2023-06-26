@@ -4,6 +4,7 @@ import {Observable, tap} from "rxjs";
 import {Address} from "../_entities/address";
 
 const AUTH_API = "http://localhost:8080/api/auth/";
+const BOOK_API = "http://localhost:8080/api/books/";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -30,6 +31,21 @@ export class AuthServiceService {
       password: password,
       roles: ['user'],
       address: address
+    }, httpOptions).pipe(
+      tap(response => {
+        console.log(response);
+      })
+    );
+  }
+
+  addBook(title: string, isbn: number, pages: number, language: string, publisher: string, bookGenre: string): Observable<any> {
+    return this.http.post(BOOK_API, {
+      title: title,
+      isbn: isbn,
+      pages: pages,
+      language: language,
+      publisher: publisher,
+      bookGenre: bookGenre
     }, httpOptions).pipe(
       tap(response => {
         console.log(response);
