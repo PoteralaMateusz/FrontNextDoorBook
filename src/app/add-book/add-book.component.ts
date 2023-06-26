@@ -9,6 +9,7 @@ import {BookService} from "../_services/book.service";
 })
 export class AddBookComponent implements OnInit {
 
+  isSuccessful: boolean = false;
   book: any = {
     title:null,
     isbn: null,
@@ -23,7 +24,6 @@ export class AddBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
 
@@ -32,6 +32,7 @@ export class AddBookComponent implements OnInit {
       .addBook(this.book)
       .subscribe(
         response =>{
+          this.isSuccessful = true;
         },
         error => {
 
@@ -42,6 +43,20 @@ export class AddBookComponent implements OnInit {
   onSubmit() {
     // Wywołanie metody addBook po kliknięciu przycisku Submit w formularzu
     this.addBook();
+    this.reset();
+
+  }
+
+  reset(){
+    this.book = {
+      title:null,
+      isbn: null,
+      numPages: null,
+      language: null,
+      publisher: null,
+      publishedYear: null,
+      bookGenre: null
+    };
   }
 
 }

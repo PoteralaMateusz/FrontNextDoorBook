@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.center {
+  font-family: montserrat, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  padding: 20px 20px 10px 10px;
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+}
+
+.center h1 {
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid silver;
+
+}
+
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
 .form-heading {
   text-align: center;
   margin-bottom: 20px;
