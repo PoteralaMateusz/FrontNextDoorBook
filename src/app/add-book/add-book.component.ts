@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BookService} from "../_services/book.service";
-import {AuthorService} from "../_services/author.service";
 import {map, Observable} from "rxjs";
 import {AuthorDTO} from "../_entities/AuthorDTO";
+import {AuthorService} from "../_services/author.service";
 
 @Component({
   selector: 'app-add-book',
