@@ -30,4 +30,14 @@ export class UserBooks implements OnInit {
       console.error(error.message);
     }
   }
+
+  public removeBook(id: number) {
+    this.bookService
+      .deleteBook(id)
+      .subscribe((response: Book) => {
+          this.getUserBook();
+          console.log(response)
+        }
+      )
+  }
 }
