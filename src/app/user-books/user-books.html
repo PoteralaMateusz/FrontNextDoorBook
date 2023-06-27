@@ -5,15 +5,16 @@
     <h3>„{{ book.tittle }}”</h3>
     <p>Genre: {{ book.bookGenre }}</p>
     <h6>Authors:</h6>
-        <p *ngFor="let author of book.authors">
-          {{ author.firstName }} {{ author.lastName }}</p>
+    <p *ngFor="let author of book.authors">
+      {{ author.firstName }} {{ author.lastName }}</p>
     <ul>
-      <li><span class="fa fa-star checked"></span> </li>
-      <li><i class="fa fa-star checked"></i> </li>
-      <li><i class="fa fa-star checked"></i> </li>
-      <li><i class="fa fa-star"></i> </li>
-      <li><i class="fa fa-star"></i> </li>
+      <li><span class="fa fa-star checked"></span></li>
+      <li><i class="fa fa-star checked"></i></li>
+      <li><i class="fa fa-star checked"></i></li>
+      <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
     </ul>
+    <button class="delete" (click)="removeBook(book.id)">Usuń</button>
     <button class="exchange">Exchange Now</button>
   </div>
 </div>

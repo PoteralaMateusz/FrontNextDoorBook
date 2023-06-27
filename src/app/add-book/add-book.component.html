@@ -54,6 +54,25 @@
     </select>
   </div>
 
+  <h3>Authors</h3>
+  <div id="authorContainer">
+    <div class="txt_field">
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="author.firstName" required>
+      <span></span>
+      <label>Imię:</label>
+    </div>
+    <div class="txt_field">
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="author.lastName" required>
+      <span></span>
+      <label>Nazwisko:</label>
+    </div>
+    <div class="txt_field">
+      <input type="text" id="nationality" name="nationality" [(ngModel)]="author.nationality" required>
+      <span></span>
+      <label>Narodowość:</label>
+    </div>
+  </div>
+
   <button type="submit" class="submit-btn">Dodaj książkę</button>
 
 </form>

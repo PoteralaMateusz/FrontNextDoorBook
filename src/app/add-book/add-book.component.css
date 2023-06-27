@@ -128,3 +128,4 @@ form .txt_field{
 .txt_field input:valid ~ span::before{
   width: 100%;
 }
+

@@ -23,8 +23,14 @@ export class BookService {
     return this.http.get<Book[]>(`${this.apiServerUrl}/api/books/FANTASY`,{headers});
   }
 
-  public addBook(book: BookAddDTO): Observable<any> {
+
+  public addBook(book: BookAddDTO): Observable<BookAddDTO> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<any>(`${this.apiServerUrl}/api/books`, book, {headers});
+    return this.http.post<BookAddDTO>(`${this.apiServerUrl}/api/books`, book, {headers});
+  }
+
+  public deleteBook(id: number): Observable<Book> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.delete<Book>(`${this.apiServerUrl}/api/books/${id}`, {headers});
   }
 }

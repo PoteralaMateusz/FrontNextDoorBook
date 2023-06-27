@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {BookAddDTO} from "../_entities/BookAddDTO";
 import {BookService} from "../_services/book.service";
+import {AuthorService} from "../_services/author.service";
+import {map, Observable} from "rxjs";
+import {AuthorDTO} from "../_entities/AuthorDTO";
 
 @Component({
   selector: 'app-add-book',
@@ -9,9 +11,11 @@ import {BookService} from "../_services/book.service";
 })
 export class AddBookComponent implements OnInit {
 
+
   isSuccessful: boolean = false;
   book: any = {
-    title:null,
+    id: null,
+    title: null,
     isbn: null,
     numPages: null,
     language: null,
@@ -20,19 +24,38 @@ export class AddBookComponent implements OnInit {
     bookGenre: null
   };
 
-  constructor(private bookService: BookService) {
+  author: any = {
+    firstName: null,
+    lastName: null,
+    nationality: null
+  };
+
+  public authors: AuthorDTO[] = []; // Zdefiniuj listę autorów
+
+  constructor(private bookService: BookService, private authorService: AuthorService) {
   }
 
   ngOnInit(): void {
   }
 
 
-  private addBook() {
-    this.bookService
-      .addBook(this.book)
+  private addBook(): Observable<number> {
+    return this.bookService.addBook(this.book).pipe(
+      map(response => {
+        this.isSuccessful = true;
+        this.reset();
+        return response.id;
+      })
+    );
+  }
+
+
+  private addAuthors(id: number) {
+    this.authorService
+      .addAuthors(this.author, id)
       .subscribe(
-        response =>{
-          this.isSuccessful = true;
+        response => {
+          console.log(response)
         },
         error => {
 
@@ -41,15 +64,17 @@ export class AddBookComponent implements OnInit {
   }
 
   onSubmit() {
-    // Wywołanie metody addBook po kliknięciu przycisku Submit w formularzu
-    this.addBook();
-    this.reset();
-
+    this.addBook().subscribe(id => {
+      this.addAuthors(id);
+    }, error => {
+      console.error('Błąd:', error);
+    });
   }
 
-  reset(){
+  reset() {
     this.book = {
-      title:null,
+      id: null,
+      title: null,
       isbn: null,
       numPages: null,
       language: null,
@@ -58,5 +83,6 @@ export class AddBookComponent implements OnInit {
       bookGenre: null
     };
   }
+
 
 }
